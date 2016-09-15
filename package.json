@@ -1,0 +1,26 @@
+{
+  "name": "loop-yield",
+  "version": "1.0.0",
+  "description": "JS library function to yield loop using timer function",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bharatpatil/loop-yield.git"
+  },
+  "keywords": [
+    "loop",
+    "yield",
+    "js",
+    "javascript",
+    "settimeout"
+  ],
+  "author": "Bharat Patil <sun.bharat.patil@gmail.com> (http://digitoffee.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bharatpatil/loop-yield/issues"
+  },
+  "homepage": "https://github.com/bharatpatil/loop-yield#readme"
+}
