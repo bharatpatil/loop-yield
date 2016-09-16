@@ -10,3 +10,5 @@ This library does that for you.
 > Please refer example.js 
 
 [Demo](http://output.jsbin.com/zodocih/)
+
+> In other words execute a length of data in batches or chunks
