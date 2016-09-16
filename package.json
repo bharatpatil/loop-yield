@@ -2,7 +2,7 @@
   "name": "loop-yield",
   "version": "1.0.0",
   "description": "JS library function to yield loop using timer function",
-  "main": "src/index.js",
+  "main": "lib/loop-yield.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,5 +22,15 @@
   "bugs": {
     "url": "https://github.com/bharatpatil/loop-yield/issues"
   },
-  "homepage": "https://github.com/bharatpatil/loop-yield#readme"
+  "homepage": "https://github.com/bharatpatil/loop-yield#readme",
+  "devDependencies": {
+    "webpack": "^1.13.2",
+    "babel": "6.3.13",
+    "babel-core": "6.1.18",
+    "babel-eslint": "5.0.0",
+    "babel-loader": "6.1.0",
+    "babel-plugin-add-module-exports": "0.1.2",
+    "babel-preset-es2015": "6.3.13",
+    "yargs": "3.32.0"
+  }
 }
