@@ -4,7 +4,9 @@
   "description": "JS library function to yield loop using timer function",
   "main": "lib/loop-yield.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode=build",
+    "dev": "webpack --progress --colors --watch --mode=dev",
+    "test": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js"
   },
   "repository": {
     "type": "git",
