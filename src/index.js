@@ -10,9 +10,8 @@ module.exports = function(opts) {
     };
 
     let iteratorCount = 0;
-    let timerInstance;
 
-    this.setOptions = function(opts) {
+    const setOptions = function(opts) {
         if (opts) {
             for (const key in options) {
                 if (options.hasOwnProperty(key)) {
@@ -26,9 +25,9 @@ module.exports = function(opts) {
         return this;
     };
 
-    this.setOptions(opts);
+    setOptions(opts);
 
-    this.loadBalancer = function() {
+    const internalIterator = () => {
         let j = iteratorCount;
         let len = (iteratorCount + options.chunkSize);
         if (len > options.totalItems) {
@@ -46,10 +45,13 @@ module.exports = function(opts) {
             return;
         }
 
-        let that = this;
-        timerInstance = setTimeout(function() {
-            that.loadBalancer.apply(that);
+        setTimeout(() => {
+            internalIterator();
         }, options.yieldTime);
+    };
+
+    this.loadBalancer = function() {
+        internalIterator();
     };
 
 
