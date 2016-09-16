@@ -20,7 +20,7 @@ var a = new ly({
 
 a.loadBalancer();
 
-var b = new ly().setOptions({
+var b = new ly({
     totalItems: 1000,
     iterator: (index) => {
         console.log('b ' + index);
