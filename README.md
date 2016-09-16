@@ -8,3 +8,5 @@ Then you may need to yield your loop after some specified time.
 This library does that for you.
 
 > Please refer example.js 
+
+[Demo](http://output.jsbin.com/zodocih/)
