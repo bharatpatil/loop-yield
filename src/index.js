@@ -1,17 +1,19 @@
 'use strict';
-module.exports = function(opts) {
+module.exports = function (opts) {
 
     const options = {
         totalItems: 1000,
         chunkSize: 100,
         yieldTime: 10,
+        beforeIterator: () => {},
         iterator: (index) => {},
+        afterIterator: () => {},
         iterationDone: () => {}
     };
 
     let iteratorCount = 0;
 
-    const setOptions = function(opts) {
+    const setOptions = function (opts) {
         if (opts) {
             for (const key in options) {
                 if (options.hasOwnProperty(key)) {
@@ -34,9 +36,15 @@ module.exports = function(opts) {
             len = iteratorCount + (options.totalItems - iteratorCount);
         };
 
+        if (options.beforeIterator) {
+            options.beforeIterator();
+        }
         while (j < len) {
             options.iterator(j);
             j++;
+        }
+        if (options.afterIterator) {
+            options.afterIterator();
         }
         iteratorCount = j;
 
@@ -50,7 +58,7 @@ module.exports = function(opts) {
         }, options.yieldTime);
     };
 
-    this.loadBalancer = function() {
+    this.loadBalancer = function () {
         internalIterator();
     };
 

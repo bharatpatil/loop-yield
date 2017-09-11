@@ -1,18 +1,24 @@
 var ly = require('./lib/loop-yield');
 
 
-var itr = function(index) {
+var itr = function (index) {
     console.log('a' + index);
 }
 
-var itrDone = function() {
+var itrDone = function () {
     console.log('done');
 };
 
 
 var a = new ly({
     totalItems: 127,
+    beforeIterator: () => {
+
+    },
     iterator: itr,
+    afterIterator: () => {
+
+    },
     iterationDone: itrDone,
     yieldTime: 500,
     chunkSize: 10
